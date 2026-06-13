@@ -19,8 +19,7 @@
 This project presents a **real-time intelligent task offloading framework** for a private 5G standalone (SA) network integrated with an edge-cloud computing continuum. The system enables mobile users (UEs) connected to the 5G network to submit image classification requests, which are dynamically routed to the optimal processing node—whether an edge server, cloud backup, or local execution—based on real-time network conditions and resource availability.
 
 ## Architecture Overview
-
-<img width="378" height="640" alt="system" src="https://github.com/user-attachments/assets/42f2405e-b18d-4347-a126-ef8d08f264a5" />
+<img width="593" height="917" alt="offloading_architecture1" src="https://github.com/user-attachments/assets/9e3b7c32-6ddb-4d66-b9ed-d62d68401b06" />
 
 The framework employs a hierarchical decision-making approach:
 
@@ -187,21 +186,6 @@ curl -X POST http://172.16.23.129:6001/milp_predict \
 
 ---
 
-## Project Screenshots
-
-| System Architecture | Horizon Dashboard |
-|---|---|
-| <img src="Setup/img/system.png" width="300"> | <img src="Setup/img/horizon.png" width="300"> |
-
-| MicroK8s Pod Status | MILP Decision Output |
-|---|---|
-| <img src="Setup/img/pods.png" width="300"> | <img src="Setup/img/milp.png" width="300"> |
-
-| Throughput Results |
-|---|
-| <img src="Setup/img/throughput.png" width="300"> |
-
----
 
 ## Authors
 
