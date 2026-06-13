@@ -1,0 +1,368 @@
+########################################
+# EDGE NODE 1
+########################################
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-node1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edge-node1
+  template:
+    metadata:
+      labels:
+        app: edge-node1
+    spec:
+      containers:
+      - name: edge
+        image: amogh0709/fastapi-application:v5
+        ports:
+        - containerPort: 8000
+        env:
+        - name: REMOTE_SERVER_URL
+          value: "http://172.16.23.128:8080/data"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-service1
+spec:
+  type: NodePort
+  selector:
+    app: edge-node1
+  ports:
+  - port: 8000
+    targetPort: 8000
+    nodePort: 30081
+
+
+########################################
+# EDGE NODE 2
+########################################
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-node2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edge-node2
+  template:
+    metadata:
+      labels:
+        app: edge-node2
+    spec:
+      containers:
+      - name: edge
+        image: amogh0709/fastapi-application:v5
+        ports:
+        - containerPort: 8000
+        env:
+        - name: REMOTE_SERVER_URL
+          value: "http://172.16.23.128:8080/data"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-service2
+spec:
+  type: NodePort
+  selector:
+    app: edge-node2
+  ports:
+  - port: 8000
+    targetPort: 8000
+    nodePort: 30082
+
+
+########################################
+# EDGE NODE 3
+########################################
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-node3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edge-node3
+  template:
+    metadata:
+      labels:
+        app: edge-node3
+    spec:
+      containers:
+      - name: edge
+        image: amogh0709/fastapi-application:v5
+        ports:
+        - containerPort: 8000
+        env:
+        - name: REMOTE_SERVER_URL
+          value: "http://172.16.23.128:8080/data"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-service3
+spec:
+  type: NodePort
+  selector:
+    app: edge-node3
+  ports:
+  - port: 8000
+    targetPort: 8000
+    nodePort: 30083
+
+
+########################################
+# EDGE NODE 4
+########################################
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-node4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edge-node4
+  template:
+    metadata:
+      labels:
+        app: edge-node4
+    spec:
+      containers:
+      - name: edge
+        image: amogh0709/fastapi-application:v5
+        ports:
+        - containerPort: 8000
+        env:
+        - name: REMOTE_SERVER_URL
+          value: "http://172.16.23.128:8080/data"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-service4
+spec:
+  type: NodePort
+  selector:
+    app: edge-node4
+  ports:
+  - port: 8000
+    targetPort: 8000
+    nodePort: 30085
+
+
+########################################
+# EDGE NODE 5
+########################################
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-node5
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edge-node5
+  template:
+    metadata:
+      labels:
+        app: edge-node5
+    spec:
+      containers:
+      - name: edge
+        image: amogh0709/fastapi-application:v5
+        ports:
+        - containerPort: 8000
+        env:
+        - name: REMOTE_SERVER_URL
+          value: "http://172.16.23.128:8080/data"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-service5
+spec:
+  type: NodePort
+  selector:
+    app: edge-node5
+  ports:
+  - port: 8000
+    targetPort: 8000
+    nodePort: 30086
+
+
+########################################
+# EDGE NODE 6
+########################################
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-node6
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edge-node6
+  template:
+    metadata:
+      labels:
+        app: edge-node6
+    spec:
+      containers:
+      - name: edge
+        image: amogh0709/fastapi-application:v5
+        ports:
+        - containerPort: 8000
+        env:
+        - name: REMOTE_SERVER_URL
+          value: "http://172.16.23.128:8080/data"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-service6
+spec:
+  type: NodePort
+  selector:
+    app: edge-node6
+  ports:
+  - port: 8000
+    targetPort: 8000
+    nodePort: 30087
+
+
+########################################
+# EDGE NODE 7
+########################################
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-node7
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edge-node7
+  template:
+    metadata:
+      labels:
+        app: edge-node7
+    spec:
+      containers:
+      - name: edge
+        image: amogh0709/fastapi-application:v5
+        ports:
+        - containerPort: 8000
+        env:
+        - name: REMOTE_SERVER_URL
+          value: "http://172.16.23.128:8080/data"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-service7
+spec:
+  type: NodePort
+  selector:
+    app: edge-node7
+  ports:
+  - port: 8000
+    targetPort: 8000
+    nodePort: 30088
+
+
+########################################
+# EDGE NODE 8
+########################################
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-node8
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edge-node8
+  template:
+    metadata:
+      labels:
+        app: edge-node8
+    spec:
+      containers:
+      - name: edge
+        image: amogh0709/fastapi-application:v5
+        ports:
+        - containerPort: 8000
+        env:
+        - name: REMOTE_SERVER_URL
+          value: "http://172.16.23.128:8080/data"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-service8
+spec:
+  type: NodePort
+  selector:
+    app: edge-node8
+  ports:
+  - port: 8000
+    targetPort: 8000
+    nodePort: 30089
+    
+
+########################################
+# EDGE NODE 9
+########################################
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-node9
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edge-node9
+  template:
+    metadata:
+      labels:
+        app: edge-node9
+    spec:
+      containers:
+      - name: edge
+        image: amogh0709/fastapi-application:v5
+        ports:
+        - containerPort: 8000
+        env:
+        - name: REMOTE_SERVER_URL
+          value: "http://172.16.23.128:8080/data"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edge-service9
+spec:
+  type: NodePort
+  selector:
+    app: edge-node9
+  ports:
+  - port: 8000
+    targetPort: 8000
+    nodePort: 30090
+
+
