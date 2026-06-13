@@ -186,6 +186,21 @@ curl -X POST http://172.16.23.129:6001/milp_predict \
 
 ---
 
+## Project Screenshots
+
+| System Architecture | Horizon Dashboard |
+|---|---|
+| <img src="Setup/img/system.jpeg" width="300"> | <img src="Setup/img/node_selection-1.png" width="300"> |
+
+| MicroK8s Pod Status | MILP Decision Output |
+|---|---|
+| <img src="Setup/img/ed-2.png" width="300"> | <img src="Setup/img/system.jpeg" width="300"> |
+
+| Throughput Results |
+|---|
+| <img src="Setup/img/system.jpeg" width="300"> |
+
+---
 
 ## Authors
 
